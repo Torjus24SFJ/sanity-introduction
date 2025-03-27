@@ -24,5 +24,20 @@ export default defineType({
       title: "Body",
       type: "text", 
     },
+    {
+      name: "mainImage",
+      title: "Main image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      fields: [{
+        name: "alt",
+        title: "Alternative title",
+        type: "string",
+        description: "Descripe the image",
+        validation: (Rule) => Rule.required(),
+      }],
+    },
   ],
 });

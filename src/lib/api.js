@@ -4,11 +4,18 @@ export async function getPost() {
   return await client.fetch(
     `
     *[_type == "post"] {
-  _id,
-  title,
-  slug,
-  body
-}
-      `,
+      _id,
+      title,
+      slug,
+      body,
+      mainImage {
+        asset-> {
+          _id,
+          url
+        },
+        alt
+      }
+    }
+    `
   );
 }
