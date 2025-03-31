@@ -5,8 +5,8 @@ export default function PostCard({ data }) {
     <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow border-white">
       {data.map((post, index) => {
         return (
-          <Link key={post._id || index} href={`/posts/`}>
-            <div className="p-4">
+          <Link key={post._id || index} href={`/posts/${post.slug.current}`}>
+            <div className="p-4 cursor-pointer">
               <h1 className="text-red-500">{post.title}</h1>
               <p className="text-white">{post.body}</p>
             </div>
